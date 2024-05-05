@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>个人中心</title>
+</head>
+<style>
+    body {
+        background-image: url(images/WPS图片.jpeg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+    }
+    .demo {
+        padding: 50px;
+        height: 80%;
+        width: 80%; /* 调整为更大的宽度 */
+        margin: 30px auto;
+        background-color: rgba(240, 255, 255, 0.489);
+        margin-top: 150px;
+        text-align: center; /* 居中内容 */
+    }
+    .div {
+        width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<body>
+    <header>
+        <button class="menu">&#9776;</button>
+        
+        <nav>
+            <div>
+                <ul>
+                    <li class="tabbar"><a href="index.html">首页</a></li>
+                    <li class="tabbar"><a href="#">支教登记</a>
+                        <ul class="top_list">
+                            <li><a href="我要发布.html">我要发布</a></li>
+                            <li><a href="我要报名.html">我要报名</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="#">捐赠助学</a>
+                        <ul class="top_list">
+                            <li><a href="物品捐赠.html">物品捐赠</a></li>
+                            <li><a href="资金捐赠.html">资金捐赠</a></li>
+                            <li><a href="虚拟物品捐赠.html">虚拟物品捐赠</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="物资采购.html">物资采购</a></li>
+                    <li class="tabbar"><a href="风采展示.html">风采展示</a></li>
+                    <li class="tabbar"><a href="个人中心.html">个人中心</a>
+                        <ul class="top_list">
+                            <li><a href="个人信息.html">个人信息</a></li>
+                            <li><a href="我的捐赠.html">我的捐赠</a></li>
+                            <li><a href="我的采购.html">我的采购</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="登录页面.html">登录</a></li>
+                    <li class="tabbar"><a href="注册页面.html">注册</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="demo">
+        <div class="div" style="font-size: 30px;color:rgb(255, 255, 255);"></div>   
+        <form>
+            <a href="#div1"> 个人信息</a>
+            <a href="#div2"> 我的捐赠</a>
+            <a href="#div3"> 我的采购</a>
+            <a href="#div4"> 我的展示</a>
+            <a href="#div5"> 我的沟通</a>
+    
+            <div id="div1"></div>
+    
+            <h2>个人信息</h2>
+    
+            <div class="div">
+                姓名：<input id="Na" type="text" class="inputs" onchange="Name()"/>
+                <div id="name" class="red" style="color: red;"></div>
+            </div>
+    
+            <div class="div">
+                性别：<input name="sex" type="radio" value="男" checked/>男 <input name="sex" type="radio" value="女"/>女
+            </div>
+    
+            <div class="div">
+                出生日期：<select id="year"></select>年
+                <select id="month"></select>月
+                <select id="day"></select>日
+            </div>
+    
+            <div class="div">
+                身份证号：<input id="Un" type="text" class="inputs" onchange="University()"/>
+                <div id="un" class="red" style="color: red;"></div>
+            </div>
+    
+            <div class="div">
+                手机号码：<input id="Co" type="text" class="inputs" onchange="College()"/>
+                <div id="co" class="red" style="color: red;"></div>
+            </div>
+    
+            <div class="div">
+                资格认证：<input id="Cl" type="text" class="inputs" onchange="Class()"/>
+                <div id="cl" class="red" style="color: red;"></div>
+            </div>
+    
+            <div id="div2"></div>
+    
+            <h2>我的捐赠</h2>
+    
+            <table width="400" height="auto" border="1">
+                <tr>
+                    <th align="left">全部</th>
+                    <th align="center">待捐赠</th>
+                    <th align="center">待反馈</th>
+                </tr>
+    
+                <tr>
+                    <td align="left">①</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+    
+                <tr>
+                    <td align="left">②</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+    
+                <tr>
+                    <td align="left">③</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+            </table>
+    
+    
+            <div id="div3"></div>
+            <h2>我的采购</h2>
+    
+            <table width="400" height="auto" border="1">
+                <tr>
+                    <th align="left">全部</th>
+                    <th align="center">待付款</th>
+                    <th align="center">待收货</th>
+                    <th align="center">待评价</th>
+                    <th align="center">售后</th>
+                </tr>
+    
+                <tr>
+                    <td align="left">①</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+    
+                <tr>
+                    <td align="left">②</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+    
+                <tr>
+                    <td align="left">③</td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                    <td align="right"> </td>
+                </tr>
+            </table>
+    
+            <div id="div4"></div>
+            <h2>我的展示</h2>
+    
+            <div id="div5"></div>
+            <h2>我的沟通</h2>
+    
+            <div class="div">
+                <input name="sub" type="submit" value="确认"/>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <p align="center">☎联系客服 | 📞电话:188 8888 8888 | ✨加入我们 | 🎁赞助加盟 | 🧧广告合作
+            <br>公司：晨曦之光 | 地址:湖北省武汉市洪山区黄家湖西路3号
+        </p>
+    </footer>
+</body>
+
+<script>
+    function Name(){
+        var Na=document.getElementById("Na").value;
+        var reg=/^[\u4e00-\u9fa5]{0,}$/;
+        if (!reg.test(Na)){
+            document.getElementById("name").innerHTML="姓名只能由汉字组成";
+            return false;
+        }
+        document.getElementById("name").innerHTML="输入成功";
+        return true;
+    }
+    function University(){
+        var Un=document.getElementById("Un").value;
+        var reg=/^[\u4e00-\u9fa5]{0,}$/;
+        if (!reg.test(Un)){
+            document.getElementById("un").innerHTML="学校名称由汉字组成";
+            return false;
+        }
+        document.getElementById("un").innerHTML="输入成功";
+        return true;
+    }
+    function College(){
+        var Co=document.getElementById("Co").value;
+        var reg=/^[\u4e00-\u9fa5]{0,}$/;
+        if (!reg.test(Co)){
+            document.getElementById("co").innerHTML="学院名称由汉字组成";
+            return false;
+        }
+        document.getElementById("co").innerHTML="输入成功";
+        return true;
+    }
+    function Class(){
+        var Cl=document.getElementById("Cl").value;
+        var reg=/^[\u4e00-\u9fa5]{0,}$/;
+        if (!reg.test(Cl)){
+            document.getElementById("cl").innerHTML="数字请输入大写形式";
+            return false;
+        }
+        document.getElementById("cl").innerHTML="输入成功";
+        return true;
+    }
+</script>
+
+</html>

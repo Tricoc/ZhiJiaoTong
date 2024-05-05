@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(images/登录页面.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+     
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* 确保导航栏位于其他内容之上 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+        }
+        
+        .demo {
+            padding-top: 130px; /* 将顶部内边距设置为导航栏的高度 */
+            padding-bottom: 60px; /* 将底部内边距设置为页脚的高度 */
+            /* 其他样式保持不变 */
+        }
+
+        .container {
+            padding: 50px;
+            width: 40%;
+            background-color: rgba(240, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .container h2 {
+            color: black;
+            text-align: center;
+        }
+        .form-group {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: left;
+        }
+        label {
+            font-size: 20px;
+            color: black;
+            display: block;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            width: 100px;
+            padding: 8px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #000000;
+            color: #fff;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #555;
+        }
+        footer {
+            
+            color: #b7b7b7;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+
+<header>
+    <button class="menu">&#9776;</button>
+    
+    <nav>
+        <div>
+            <ul>
+                <li class="tabbar"><a href="index.html">首页</a></li>
+                <li class="tabbar"><a href="#">支教登记</a>
+                    <ul class="top_list">
+                        <li><a href="我要发布.html">我要发布</a></li>
+                        <li><a href="我要报名.html">我要报名</a></li>
+                    </ul>
+                </li>
+                <li class="tabbar"><a href="#">捐赠助学</a>
+                    <ul class="top_list">
+                        <li><a href="物品捐赠.html">物品捐赠</a></li>
+                        <li><a href="资金捐赠.html">资金捐赠</a></li>
+                        <li><a href="虚拟物品捐赠.html">虚拟物品捐赠</a></li>
+                    </ul>
+                </li>
+                <li class="tabbar"><a href="物资采购.html">物资采购</a></li>
+                <li class="tabbar"><a href="风采展示.html">风采展示</a></li>
+                <li class="tabbar"><a href="#">个人中心</a>
+                    <ul class="top_list">
+                        <li><a href="个人信息.html">个人信息</a></li>
+                        <li><a href="我的捐赠.html">我的捐赠</a></li>
+                        <li><a href="我的采购.html">我的采购</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="tabbar"><a href="登录页面.html">登录</a></li>
+                <li class="tabbar"><a href="注册页面.html">注册</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <!-- 登录表单 -->
+        <h2>请输入登录信息：</h2>
+        <form onsubmit="return test()">
+            <div class="form-group">
+                <label for="email">手机号码:</label>
+                <input id="email" type="text" class="inputs" onchange="checkEmail()">
+                <div id="emailId" class="red"></div> <!-- 用于显示手机号码输入的状态 -->
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">密码:</label>
+                <input id="pwd" type="password" class="inputs" onchange="checkPwd()">
+                <div id="pwdId" class="red"></div> <!-- 用于显示密码输入的状态 -->
+            </div>
+            <div class="form-group">
+                <input name="sub" type="submit" value="登录">
+                <input name="cancel" type="reset" value="清除">
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <p align="center">☎联系客服 | 📞电话:188 8888 8888 | ✨加入我们 | 🎁赞助加盟 | 🧧广告合作
+            <br>公司：晨曦之光 | 地址:湖北省武汉市洪山区黄家湖西路3号
+        </p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    // 验证手机号码
+    function checkEmail() {
+        var email = document.getElementById("email").value;
+        var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+        var emailId = document.getElementById("emailId");
+        if (!reg.test(email)) {
+            emailId.innerHTML = "Email格式不正确, 例如 web@sohu.com";
+            emailId.style.color = "red";
+            return false;
+        }
+        emailId.innerHTML = "输入成功";
+        emailId.style.color = "green";
+        return true;
+    }
+
+    // 验证密码
+    function checkPwd() {
+        var pwd = document.getElementById("pwd").value;
+        var reg = /^[a-zA-Z0-9]{4,12}$/;
+        var reg1 = /^\d{4,12}$/;
+        var pwdId = document.getElementById("pwdId");
+        if (!reg.test(pwd)) {
+            pwdId.innerHTML = "密码长度为6-12个字符";
+            pwdId.style.color = "red";
+            return false;
+        }
+        if (reg1.test(pwd)) {
+            pwdId.innerHTML = "密码设置太简单";
+            pwdId.style.color = "red";
+            return false;
+        }
+        pwdId.innerHTML = "输入成功";
+        pwdId.style.color = "green";
+        return true;
+    }
+
+    // 表单提交前的验证
+    function test() {
+        if (!checkEmail() || !checkPwd()) {
+            alert("请将登录信息填写完整!");
+            return false;
+        }
+        return true;
+    }
+</script>

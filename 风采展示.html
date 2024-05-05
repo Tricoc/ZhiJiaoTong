@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风采展示    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(images/微信图片_20240423124133.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+     
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* 确保导航栏位于其他内容之上 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000; /* 确保页脚位于其他内容之上 */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+        }
+        .demo {
+            padding-top: 130px; /* 将顶部内边距设置为导航栏的高度 */
+            padding-bottom: 60px; /* 将底部内边距设置为页脚的高度 */
+            /* 其他样式保持不变 */
+        }
+        .container {
+            padding: 50px;
+            width: 80%; /* 修改宽度 */
+            background-color: rgba(240, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto; /* 让容器水平居中 */
+        }
+        .container h2 {
+            color: black;
+            text-align: center;
+            font-size: 24px; /* 修改标题字体大小 */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 合并边框 */
+        }
+        table td {
+            padding: 10px; /* 添加单元格内边距 */
+            text-align: center; /* 文字居中 */
+        }
+        table td p {
+            font-size: 16px; /* 修改描述字体大小 */
+            margin-top: 10px; /* 调整描述与图片的间距 */
+        }
+        table td img {
+            max-width: 100%; /* 图片宽度最大为父元素宽度 */
+            height: auto; /* 图片高度自适应 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="menu">&#9776;</button>
+        
+        <nav>
+            <div>
+                <ul>
+                    <li class="tabbar"><a href="index.html">首页</a></li>
+                    <li class="tabbar"><a href="#">支教登记</a>
+                        <ul class="top_list">
+                            <li><a href="我要发布.html">我要发布</a></li>
+                            <li><a href="我要报名.html">我要报名</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="#">捐赠助学</a>
+                        <ul class="top_list">
+                            <li><a href="物品捐赠.html">物品捐赠</a></li>
+                            <li><a href="资金捐赠.html">资金捐赠</a></li>
+                            <li><a href="虚拟物品捐赠.html">虚拟物品捐赠</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="物资采购.html">物资采购</a></li>
+                    <li class="tabbar"><a href="风采展示.html">风采展示</a></li>
+                    <li class="tabbar"><a href="#">个人中心</a>
+                        <ul class="top_list">
+                            <li><a href="个人信息.html">个人信息</a></li>
+                            <li><a href="我的捐赠.html">我的捐赠</a></li>
+                            <li><a href="我的采购.html">我的采购</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="登录页面.html">登录</a></li>
+                    <li class="tabbar"><a href="注册页面.html">注册</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="demo">
+        <div class="container">
+            <h2>风采展示</h2>
+            <div id="main">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="1">
+                                <img src="images/全员合影2.jpg" alt="图片1" />
+                                <p>仲夏生萤光，七彩筑梦想！13名志愿者在这所学校支教</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="2">
+                                <img src="images/全员合影3.jpg" alt="图片2" />
+                                <p>潜江：“萤火虫之光” 照亮乡村振兴路--湖北文明网</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="3">
+                                <img src="images/全员合影5.jpg" alt="图片3" />
+                                <p>郧阳谭山镇：暑期学子燕归巢，助力家乡志愿红</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="4">
+                                <img src="images/IMG_4163.JPG" alt="图片4" />
+                                <p>大学生志愿者走进乡村中小学，绘就儿童“七彩假期”</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- 继续添加表格行 -->
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p align="center">☎联系客服 | 📞电话:188 8888 8888 | ✨加入我们 | 🎁赞助加盟 | 🧧广告合作
+            <br>公司：晨曦之光 | 地址:湖北省武汉市洪山区黄家湖西路3号
+        </p>
+                   
+    </footer>
+</body>
+</html>
