@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物品捐赠</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<style>
+	body{
+	background-image: url(images/图2.png);
+    background-position: center center;
+	background-size: cover;
+    background-repeat:no-repeat;}
+	.demo{
+    padding: 50px;
+    height: 80%;
+    width: 40%;
+    margin: 30px auto;
+    background-color:rgba(240, 255, 255, 0.489);
+    margin-top: 150px}
+	.div{
+	width: 400px;
+	margin: 0 auto; 
+	padding: 15px;}
+	p{
+	color: red;
+	float:left;
+	margin-left: 20%;}
+    
+</style>
+
+<body>
+    <header>
+        <button class="menu">&#9776;</button>
+        
+        <nav>
+            <div>
+                <ul>
+					<li class="tabbar"><a href="index.html">首页</a></li>
+                    <li class="tabbar"><a href="#">支教登记</a>
+                        <ul class="top_list">
+                            <li><a href="我要发布.html">我要发布</a></li>
+                            <li><a href="我要报名.html">我要报名</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="#">捐赠助学</a>
+                        <ul class="top_list">
+                            <li><a href="物品捐赠.html">物品捐赠</a></li>
+                            <li><a href="资金捐赠.html">资金捐赠</a></li>
+                            <li><a href="虚拟物品捐赠.html">虚拟物品捐赠</a></li>
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="物资采购.html">物资采购</a></li>
+                    <li class="tabbar"><a href="风采展示.html">风采展示</a></li>
+                    <li class="tabbar"><a href="#">个人中心</a>
+                        <ul class="top_list">
+                            <li><a href="个人信息.html">个人信息</a></li>
+                            <li><a href="我的捐赠.html">我的捐赠</a></li>
+                            <li><a href="我的采购.html">我的采购</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="tabbar"><a href="登录页面.html">登录</a></li>
+                    <li class="tabbar"><a href="注册页面.html">注册</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<div class="demo">
+<div class="div" style="font-size: 30px;color:rgb(255, 255, 255);" <h2>物品捐赠</h2>
+</div>   
+
+
+<div class="div">
+捐赠地址：<input id="Na" type="text" class="inputs" onchange="Name()"/>
+<div id="name" class="red" style="color: red;"></div></div>
+
+<div class="div">
+物品内容：<input id="Na" type="text" class="inputs" onchange="Name()"/>
+<div id="name" class="red" style="color: red;"></div></div>
+
+<div class="div">
+快递单号：<input id="Co" type="text" class="inputs" onchange="College()"/>
+<div id="co" class="red" style="color: red;"></div></div>
+
+<div class="div">
+联系电话：<input id="Co" type="text" class="inputs" onchange="College()"/>
+<div id="co" class="red" style="color: red;"></div></div>
+
+<div class="div">
+    <input name="sub" type="submit" value="确认"/>
+    </div>
+
+</div>
+
+<footer>
+	<p align="center">☎联系客服 | 📞电话:188 8888 8888 | ✨加入我们 | 🎁赞助加盟 | 🧧广告合作
+		<br>公司：晨曦之光 | 地址:湖北省武汉市洪山区黄家湖西路3号
+	</p>
+			   
+</footer>
+</body></html>
+
+
+
+<script>
+function Name(){
+	var Na=document.getElementById("Na").value;
+	var reg=/^[\u4e00-\u9fa5]{0,}$/;
+	if (!reg.test(Na)){
+		document.getElementById("name").innerHTML="姓名只能由汉字组成";
+		return false;}
+	document.getElementById("name").innerHTML="输入成功";
+	return true;}
+function University(){
+	var Un=document.getElementById("Un").value;
+	var reg=/^[\u4e00-\u9fa5]{0,}$/;
+	if (!reg.test(Un)){
+		document.getElementById("un").innerHTML="学校名称由汉字组成";
+		return false;}
+	document.getElementById("un").innerHTML="输入成功";
+	return true;}
+function College(){
+	var Co=document.getElementById("Co").value;
+	var reg=/^[\u4e00-\u9fa5]{0,}$/;
+	if (!reg.test(Co)){
+		document.getElementById("co").innerHTML="学院名称由汉字组成";
+		return false;}
+	document.getElementById("co").innerHTML="输入成功";
+	return true;}
+function Class(){
+	var Cl=document.getElementById("Cl").value;
+	var reg=/^[\u4e00-\u9fa5]{0,}$/;
+	if (!reg.test(Cl)){
+		document.getElementById("cl").innerHTML="数字请输入大写形式";
+		return false;}
+	document.getElementById("cl").innerHTML="输入成功";
+	return true;}
+function Number(){
+	var Num=document.getElementById("Num").value;
+	var reg=/^\d{11}$/;
+	if (!reg.test(Num)){
+		document.getElementById("num").innerHTML="学号必须为11位数字";
+		return false;}
+	document.getElementById("num").innerHTML="输入成功";
+	return true;}
+function checkUser(){
+	var user=document.getElementById("user").value;
+	var reg=/^\w{4,12}$/;
+	if (!reg.test(user)){
+		document.getElementById("userId").innerHTML="由字母、数字和下划线组成的4-16位字符";
+		return false;}
+	document.getElementById("userId").innerHTML="输入成功";
+	return true;}
+function checkPwd(){
+	var pwd=document.getElementById("pwd").value;
+	var reg=/^[a-zA-Z0-9]{4,12}$/;
+	var reg1=/^\d{4,12}$/;
+	if (!reg.test(pwd)){
+		document.getElementById("pwdId").innerHTML="密码长度为6-12个字符";
+		return false;}
+	if (reg1.test(pwd)){
+		document.getElementById("pwdId").innerHTML="密码设置太简单";
+		return false;}
+	document.getElementById("pwdId").innerHTML="输入成功";
+	return true;}
+function checkRepwd(){
+	var repwd=document.getElementById("repwd").value;
+	var pwd=document.getElementById("pwd").value;
+	if (pwd!=repwd){
+		document.getElementById("repwdId").innerHTML="两次输入的密码不一致";
+		return false;}
+	document.getElementById("repwdId").innerHTML="输入成功";
+	return true;}
+function checkEmail(){
+	var email=document.getElementById("email").value;
+	var reg=/^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+	if (!reg.test(email)){
+		document.getElementById("emailId").innerHTML="Email格式不正确,例如web@sohu.com";
+		return false;}
+	document.getElementById("emailId").innerHTML="输入成功";
+	return true;}
+function test(){
+if (!Name()||!University()||!College()||!Class||!Number()||!checkUser()||!checkEmail()||!checkPwd()||!checkRepwd()){
+	alert("请将注册信息填写完整!");
+	return false;}
+	return true;}
+
+	function acheck1(){
+    $(".box1").show();
+    $(".box2").hide();
+}
+function acheck2(){
+    $(".box2").show();       
+    $(".box1").hide();
+}
+$(function(){
+    var list = $('#list:checked').val();
+    if( list == 1){
+        $(".box1").show();
+    }
+    if( list == 2){
+        $(".box2").show();
+       }
+});
+</script>
